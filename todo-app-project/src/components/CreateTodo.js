@@ -45,13 +45,18 @@ export default function CreateTodo() {
       isClear: false,
     };
     dispatch(addTodo(newTodo));
+    setNewTodoTitle('');
     console.log(newTodo);
   };
 
   return (
     <div>
       <CreateTodoWrapper>
-        <CreateTodoInput type="text" onChange={onChangeInput}></CreateTodoInput>
+        <CreateTodoInput
+          type="text"
+          onChange={onChangeInput}
+          value={newTodoTitle}
+        ></CreateTodoInput>
         <CreateTodoButton onClick={onClickSubmit}>
           <BiPlus size={30} color="white"></BiPlus>
         </CreateTodoButton>
