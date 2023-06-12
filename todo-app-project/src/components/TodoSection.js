@@ -1,5 +1,4 @@
 import SingleTodo from './SingleTodo';
-import { initialState } from '../redux/reducers/initialState';
 import { styled } from 'styled-components';
 
 const TodoSectionDiv = styled.div`
@@ -15,11 +14,11 @@ const TodoSectionDiv = styled.div`
   margin-bottom: 1rem;
 `;
 
-export default function TodoSection() {
+export default function TodoSection({ todos }) {
   return (
     <TodoSectionDiv>
-      {initialState.TodoList &&
-        initialState.TodoList.map((todo) => (
+      {todos &&
+        todos.map((todo) => (
           <SingleTodo key={todo.id} todo={todo}></SingleTodo>
         ))}
     </TodoSectionDiv>
